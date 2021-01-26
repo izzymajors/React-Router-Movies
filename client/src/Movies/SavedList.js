@@ -5,6 +5,7 @@ export default function SavedList(props) {
 
   const {lists} = props;
 
+  const { url } = useRouteMatch;
 
   return (
     <div className="saved-list">
