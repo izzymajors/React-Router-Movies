@@ -13,6 +13,8 @@ export default function App () {
       axios
         .get('http://localhost:5000/api/movies') // Study this endpoint with Postman
         .then(response => {
+
+          setMovieList(response.data)
           // Study this response with a breakpoint or log statements
           // and set the response data as the 'movieList' slice of state
         })
@@ -30,7 +32,11 @@ export default function App () {
   return (
     <div>
       <SavedList list={[ /* This is stretch */]} />
-      <Link to='./Movies/SavedList'>SavedList</Link>
+      <Link to={"/Movies/SavedList"}> movieList </Link>
+
+      <Route path= {"/Movies/SavedList"}>
+        <SavedList lists={[]}/>
+        </Route>
 
       <div>Replace this Div with your Routes</div>
     </div>
